@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gzry首页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg-icon {
+            position: absolute;
+            font-size: 20px;
+            color: #57bfff;
+            animation: float 8s infinite linear alternate, blink 3s infinite;
+        }
+
+        .container {
+            position: relative; /* 修改 */
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(31, 31, 31, 0.8);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transform-style: preserve-3d; /* 添加3D效果 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
+        }
+
+        .container:hover {
+            transform: scale(1.05) rotateX(5deg) rotateY(5deg); /* 添加旋转效果 */
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.6); /* 添加阴影 */
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #57bfff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影 */
+        }
+
+        p {
+            line-height: 1.6;
+            text-align: justify; /* 调整文字对齐方式 */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            display: flex; /* 修改 */
+            align-items: center; /* 修改 */
+        }
+
+        .service-content {
+            border: 2px solid #57bfff; /* 添加边框 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* 添加阴影 */
+        }
+
+        .service-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .service-content li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* 新增 */
+        }
+
+        .service-content li p {
+            margin: 0;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #57bfff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #57bfff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #47a4e5;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.2); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-container">
+        <!-- 使用JavaScript生成200个图标 -->
+        <script>
+            const icons = ["fa-shopping-cart", "fa-book", "fa-laptop", "fa-microchip"];
+            for (let i = 0; i < 268; i++) {
+                let icon = document.createElement("i");
+                let randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                icon.className = `fas ${randomIcon} bg-icon`;
+                icon.style.top = `${Math.random() * 100}%`;
+                icon.style.left = `${Math.random() * 100}%`;
+                icon.style.animationDuration = `${Math.floor(Math.random() * 8) + 8}s`;
+                icon.style.animationDelay = `${Math.random() * 8}s`; // 设置随机延迟时间
+                document.querySelector(".bg-container").appendChild(icon);
+            }
+        </script>
+    </div>
+    <div class="container">
+        <h1>大学生毕业咨询服务</h1>
+        <p style="text-align: center;">欢迎来到我们的网站，我们提供专业的毕业设计咨询和技术支持服务，帮助您顺利完成毕业设计。</p>
+        <div class="service-content">
+            <h2>服务内容</h2>
+            <ul>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <strong>毕业设计选题建议：</strong>
+                    <p>我们提供热门、前沿的毕业设计选题建议，帮助您选择合适的课题。</p>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <strong>技术指导与解答：</strong>
+                    <p>针对您在毕业设计过程中遇到的技术问题，我们提供专业的指导和解答服务。</p>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <strong>代码编写与调试：</strong>
+                    <p>我们的团队可以协助您编写和调试毕业设计中的代码，确保项目顺利进行。</p>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <strong>论文写作与修改：</strong>
+                    <p>提供论文写作和修改服务，确保论文内容准确、规范。</p>
+                </li>
+                <li>
+                    <i class="fas fa-check"></i>
+                    <strong>其他相关咨询：</strong>
+                    <p>如果您有其他与毕业设计相关的问题，我们也乐意为您提供咨询服务。</p>
+                </li>
+            </ul>
+        </div>
+        <div class="contact-info">
+            <h2>联系方式</h2>
+            <p>您可以通过以下方式联系我们：</p>
+            <p>谷歌邮箱：<a href="mailto:gzryyiya@gmail.com">gzryyiya@gmail.com</a></p>
+            <p>请在邮件中提供您的问题和需求，我们将尽快回复您。</p>
+        </div>
+        <div class="action">
+            <p>现在就联系我们吧！</p>
+            <a href="mailto:gzryyiya@gmail.com" class="btn">发送邮件咨询</a>
+        </div>
+    </div>
+</body>
+</html>
